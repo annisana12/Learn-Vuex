@@ -1,18 +1,41 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <counter />
+    <counter-squared />
+    <buttons />
+    <color-code-input />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    'counter': require('@/components/Counter.vue').default,
+    'counter-squared': require('@/components/CounterSquared.vue').default,
+    'buttons': require('@/components/Buttons.vue').default,
+    'color-code-input': require('@/components/ColorCodeInput.vue').default
   }
 }
 </script>
+
+<style >
+div {
+  margin-bottom: 20px;
+}
+
+.counter {
+  font-size: 60px;
+}
+
+.buttons button {
+  width: 100px;
+  font-size: 40px;
+  margin: 0 10px;
+}
+
+input {
+  padding: 8px 15px;
+}
+</style>
